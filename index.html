@@ -11,142 +11,25 @@
 <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#f1ede4; --ink:#0e0e10; --mu:#5d5b55; --ln:rgba(14,14,16,.2); --soft:rgba(14,14,16,.06); --bl:#1f6feb;
-  --disp:"Space Grotesk",-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;
-  --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;
-  --r:26px;
-}
-@media(prefers-color-scheme:dark){:root{
-  --bg:#0c0c0e; --ink:#f4f1ea; --mu:#a09d95; --ln:rgba(244,241,234,.22); --soft:rgba(244,241,234,.07); --bl:#58a6ff; color-scheme:dark}}
-*{box-sizing:border-box}
-html,body{margin:0;max-width:100%;overflow-x:hidden}
-body{background:var(--bg);color:var(--ink);font:16px/1.35 var(--body);-webkit-text-size-adjust:100%;min-height:100vh}
-#wrap{max-width:1180px;margin:0 auto;padding:calc(28px + env(safe-area-inset-top,0px)) 18px calc(56px + env(safe-area-inset-bottom,0px))}
-.hd{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px}
-h1{font:700 clamp(52px,12vw,104px)/.9 var(--disp);letter-spacing:-.045em;margin:0}
-.meta{text-align:right;color:var(--ink);font:700 15px var(--disp);padding-bottom:6px}
-.sec{display:flex;align-items:center;gap:12px;margin:34px 2px 14px;font:700 13px var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
-.sec::after{content:"";flex:1;height:2px;background:var(--ln)}
-.grid{display:grid;grid-template-columns:1fr;gap:14px}
-.tile{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:190px;padding:22px;border-radius:var(--r);background:var(--c);color:#0e0e10;text-decoration:none;isolation:isolate;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
-a.tile{cursor:pointer}
-.wm{position:absolute;right:-30px;top:-34px;width:230px;height:230px;z-index:-1;color:#0e0e10;opacity:.11}
-.wm svg,.ico svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
-.name{font:700 clamp(38px,9vw,54px)/.95 var(--disp);letter-spacing:-.045em;min-width:0;overflow-wrap:anywhere}
-.go{flex:none;width:56px;height:56px;border-radius:16px;background:#0e0e10;color:var(--c);display:flex;align-items:center;justify-content:center;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
-.go svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.unlinked{flex:none;font-size:13px;font-weight:700;border:2px solid #0e0e10;border-radius:12px;padding:8px 12px}
-.plans{display:grid;grid-template-columns:1fr;gap:12px}
-.plan{display:flex;align-items:center;gap:14px;padding:16px 18px;border:2px dashed var(--ln);border-radius:20px;color:var(--ink)}
-.plan .ico{flex:none;width:36px;height:36px;color:var(--mu)}
-.plan .pn{font:700 18px var(--disp);letter-spacing:-.02em;min-width:0}
-.plan .soon{margin-left:auto;flex:none;font-size:12px;font-weight:700;color:var(--mu);background:var(--soft);border-radius:8px;padding:5px 9px}
-@media(hover:hover){a.tile:hover{transform:translateY(-5px)}a.tile:hover .go{transform:translateX(4px) rotate(-8deg)}}
-a.tile:active{transform:scale(.985)}
-:focus-visible{outline:3px solid var(--bl);outline-offset:3px}
-.rise{animation:rise .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*70ms)}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@media(min-width:700px){#wrap{padding-left:32px;padding-right:32px}.grid{grid-template-columns:repeat(2,1fr)}.plans{grid-template-columns:repeat(2,1fr)}.tile{min-height:230px}}
-@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.plans{grid-template-columns:repeat(4,1fr)}.tile{min-height:280px}}
-/* Big screens (Macs, ultrawides): scale the whole page up. Shorter screens scale less so it still fits. */
-@media(min-width:1600px){#wrap{zoom:1.2}}
-@media(min-width:2200px){#wrap{zoom:1.7}}
-@media(min-width:3000px){#wrap{zoom:2.2}}
-@media(min-width:1600px) and (max-height:1000px){#wrap{zoom:1.1}}
-@media(min-width:2200px) and (max-height:1150px){#wrap{zoom:1.35}}
-@media(min-width:3000px) and (max-height:1500px){#wrap{zoom:1.6}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:root{--bg:#f1ede4;--ink:#0e0e10}
+@media(prefers-color-scheme:dark){:root{--bg:#0c0c0e;--ink:#f4f1ea;color-scheme:dark}}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+#app{position:fixed;inset:0;width:100%;height:100%;border:0;background:var(--bg)}
+#msg{display:none;padding:32px;max-width:520px}
 </style>
 </head>
 <body>
-<div id="wrap">
-  <header class="hd">
-    <h1>Apps</h1>
-    <div class="meta" id="day"></div>
-  </header>
-  <div id="out"></div>
-</div>
+<iframe id="app" title="Apps"></iframe>
+<div id="msg">Paste your Apps Script /exec link into APP_URL at the top of this file's script.</div>
 <script>
-/* ===== EDIT HERE =====
-   To link an app, paste its web app URL between the quotes.
-   To add an app, copy one line and change it. Icons: film, book, quote, box, cards. */
-var APPS = [
-  { name: 'Reel Log',     icon: 'film',  url: 'https://dfinch2132.github.io/Movie_trips/' },
-  { name: 'Reading Log',  icon: 'book',  url: 'https://dfinch2132.github.io/reading_goals/' },
-  { name: 'Verse Memory', icon: 'quote', url: 'https://dfinch2132.github.io/memory_verse_app/' }
-];
-var PLANNED = [
-  { name: 'Popcorn Buckets', icon: 'box' },
-  { name: 'Playing Cards',   icon: 'cards' },
-  { name: 'Funko',           icon: 'box' },
-  { name: 'Blankets',        icon: 'box' }
-];
-/* ===================== */
-
-var ICONS = {
-  film: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/>',
-  book: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5M8 7h8"/>',
-  quote: '<path d="M4 6h16M4 12h10M4 18h16"/><path d="M18 11l2 2-2 2"/>',
-  box: '<path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/>',
-  cards: '<rect x="4" y="5" width="11" height="15" rx="2"/><path d="M9 3h9a2 2 0 0 1 2 2v12"/>'
-};
-// One solid color per app, in order. No purple.
-var COLORS = ['#ff5a3c', '#ffc933', '#2ee6a6', '#4da3ff', '#ff8fb8', '#b6f23c'];
-
-function el(tag, cls, text) {
-  var n = document.createElement(tag);
-  if (cls) n.className = cls;
-  if (text != null) n.textContent = text;
-  return n;
+var APP_URL = 'https://script.google.com/macros/s/AKfycbyH9gjyOqhy6vmtu9PuBD9R59YqDf4p0Qcn94tc2lV5BRkTzu4EdGkmqI9lOeZT626S/exec'; // your launcher Apps Script /exec link (the only line you ever edit in this file)
+if (/^https:\/\/script\.google\.com\/.+\/exec$/.test(APP_URL)) {
+  document.getElementById('app').src = APP_URL;
+} else {
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('msg').style.display = 'block';
 }
-function svg(name) {
-  return '<svg viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[name] || ICONS.box) + '</svg>';
-}
-function tile(a, idx) {
-  var linked = !!a.url;
-  var t = el(linked ? 'a' : 'div', 'tile rise');
-  t.style.setProperty('--c', COLORS[idx % COLORS.length]);
-  t.style.setProperty('--i', Math.min(idx, 8));
-  if (linked) { t.href = a.url; t.target = '_blank'; t.rel = 'noopener'; t.setAttribute('aria-label', 'Open ' + a.name); }
-  var wm = el('div', 'wm'); wm.innerHTML = svg(a.icon); t.appendChild(wm);
-  var foot = el('div', 'foot');
-  foot.appendChild(el('div', 'name', a.name));
-  if (linked) {
-    var go = el('div', 'go');
-    go.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-    foot.appendChild(go);
-  } else {
-    foot.appendChild(el('div', 'unlinked', 'Link not set'));
-  }
-  t.appendChild(foot);
-  return t;
-}
-function plan(a, idx) {
-  var p = el('div', 'plan rise');
-  p.style.setProperty('--i', Math.min(idx, 8));
-  var ic = el('div', 'ico'); ic.innerHTML = svg(a.icon); p.appendChild(ic);
-  p.appendChild(el('div', 'pn', a.name));
-  p.appendChild(el('div', 'soon', 'Not built yet'));
-  return p;
-}
-var out = document.getElementById('out');
-out.appendChild(el('div', 'sec', 'Your apps'));
-var g = el('div', 'grid');
-APPS.forEach(function (a, i) { g.appendChild(tile(a, i)); });
-out.appendChild(g);
-if (PLANNED.length) {
-  out.appendChild(el('div', 'sec', 'Collections coming next'));
-  var p = el('div', 'plans');
-  PLANNED.forEach(function (a, i) { p.appendChild(plan(a, i + APPS.length)); });
-  out.appendChild(p);
-}
-document.getElementById('day').textContent = new Date().toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric' });
 </script>
 </body>
 </html>
